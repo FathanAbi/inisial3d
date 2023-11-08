@@ -76,8 +76,32 @@ function main(){
 
     var theta = glMatrix.glMatrix.toRadian(1);//sudutnya adalah 1 derajat   
     var animate = function(){
-        if(!freeze){
+        if(space){
             glMatrix.mat4.rotate(modmatrix, modmatrix, theta, [1.0,1.0,1.0]);
+        }
+
+        if(w){
+            glMatrix.mat4.rotate(modmatrix, modmatrix, theta, [-1.0,0.0,0.0]);
+        }
+
+        if(a){
+            glMatrix.mat4.rotate(modmatrix, modmatrix, theta, [0.0,-1.0,0.0]);
+        }
+
+        if(s){
+            glMatrix.mat4.rotate(modmatrix, modmatrix, theta, [1.0,0.0,0.0]);
+        }
+
+        if(d){
+            glMatrix.mat4.rotate(modmatrix, modmatrix, theta, [0.0,1.0,0.0]);
+        }
+
+        if(left){
+            glMatrix.mat4.rotate(modmatrix, modmatrix, theta, [0.0,0.0,1.0]);
+        }
+
+        if(right){
+            glMatrix.mat4.rotate(modmatrix, modmatrix, theta, [0.0,0.0,-1.0]);
         }
         
         gl.enable(gl.DEPTH_TEST);
