@@ -7,6 +7,9 @@ var left = false;
 var right = false;
 function onMouseClick(event){
     w = !w;
+    a = !a;
+    left = !left;
+    
 }
 
 document.addEventListener('click', onMouseClick, false);
